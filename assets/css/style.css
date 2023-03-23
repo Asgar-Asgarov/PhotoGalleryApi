@@ -1,5 +1,7 @@
 body{
     min-height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+   
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -7,4 +9,75 @@ body{
     justify-content: center;
     text-align: center;
     
+}
+
+
+.container
+{
+ display: flex;
+ padding: 20px;
+ margin: 10px; 
+ border-radius: 5px;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ background-color: aliceblue;
+
+ width: 90%;
+}
+
+h2
+{
+    font-weight: 400;
+}
+
+.input{
+    padding: 20px 10px;
+    font-size: 18px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+}
+
+.container>*{
+    margin: 5px;
+}
+
+.errorMessage
+{
+    color: red;
+    font-weight: 600;
+    margin: 10px;
+    display: none;
+} 
+
+.btn
+{
+    text-transform: uppercase;
+    width: 250px;
+    height: 45px;
+    margin: 20px 0;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: black;
+    color: aliceblue;
+    border-radius:5px;
+}
+
+
+
+.gallery img {
+    object-fit: cover;
+    height: 250px;
+    width: 400px;
+    border-radius: 5px;  
+    margin: 5px;
+}
+
+
+
+.gallery{
+    display: block;
 }
