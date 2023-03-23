@@ -83,7 +83,16 @@ h2
     margin: 5px;
 }
 
-
+@media  (min-width:320px) and (max-width:768px) 
+{
+ .gallery img { 
+    object-fit: cover; 
+    height: 150px; 
+    width: 250px;
+     border-radius: 5px; 
+     margin: 5px; 
+    } 
+}
 
 .gallery{
     display: block;
