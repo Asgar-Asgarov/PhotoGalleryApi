@@ -66,6 +66,13 @@ h2
     border-radius:5px;
 }
 
+.btn:hover{
+    color: aliceblue; 
+    background-color: green; 
+    cursor: pointer; 
+    transition: background-color 200ms ease-in-out ; 
+}
+
 
 
 .gallery img {
