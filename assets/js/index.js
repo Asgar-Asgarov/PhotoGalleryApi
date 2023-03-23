@@ -1,6 +1,7 @@
 const getPhotos = document.getElementById("btn");
 const errorMessage = document.getElementById("errorMessage");
 const input = document.getElementById("input");
+const galleryEl=document.getElementById("gallery");
 
 getPhotos.addEventListener("click", fetchImage);
 
@@ -11,6 +12,7 @@ async function fetchImage(params) {
     errorMessage.innerText = "Number should be between 0 and 11";
     return;
   }
+  imgs="";
   try { 
      await fetch(
     `https://api.unsplash.com/photos?per_page=${inputValue}&page=${Math.round(
@@ -21,7 +23,10 @@ async function fetchImage(params) {
       if (data) 
       {
        data.forEach((pic) => {
-        console.log(pic.urls.small);      
+
+       imgs+= `<img src=${pic.urls.small} alt="image" /> `;
+       galleryEl.style.display="block";
+       galleryEl.innerHTML=imgs;    
        }); 
       }
     })
