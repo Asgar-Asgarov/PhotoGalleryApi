@@ -18,7 +18,12 @@ async function fetchImage(params) {
     )}&client_id=GV2146OATxwIUAjpTpKgvGjAM_UI-5Iw--7Cag2886w`
   ).then((res) =>
     res.json().then((data) => {
-      console.log(data);
+      if (data) 
+      {
+       data.forEach((pic) => {
+        console.log(pic.urls.small);      
+       }); 
+      }
     })
   );
 
