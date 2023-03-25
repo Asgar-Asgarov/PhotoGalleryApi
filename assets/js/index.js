@@ -14,6 +14,9 @@ async function fetchImage(params) {
   }
   imgs="";
   try { 
+    getPhotos.style.display="none";
+    const loading = `<img src="./assets/images/spinner.svg" />`;
+    galleryEl.innerHTML=loading;
      await fetch(
     `https://api.unsplash.com/photos?per_page=${inputValue}&page=${Math.round(
       Math.random() * 1000
@@ -27,16 +30,17 @@ async function fetchImage(params) {
        imgs+= `<img src=${pic.urls.small} alt="image" /> `;
        galleryEl.style.display="block";
        galleryEl.innerHTML=imgs;    
+       getPhotos.style.display="block"
+       errorMessage.style.display = "none";
        }); 
       }
     })
   );
-
-  errorMessage.style.display = "none";
-    
   } catch (error) {
     errorMessage.style.display = "block";
-    errorMessage.innerText = "An error occured , please  try again later";    
+    errorMessage.innerText = "An error occured , please  try again later";  
+    getPhotos.style.display="block" ;
+    galleryEl.style.display="none";
   }
 
 }
